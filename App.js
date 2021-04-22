@@ -41,7 +41,11 @@ export default class extends React.Component {
     this.getLocation();
   }
   render() {
-    const { isLoading, temp } = this.state;
-    return isLoading ? <Loading /> : <Weather temp={Math.round(temp)} />;
+    const { isLoading, temp, condition } = this.state;
+    return isLoading ? (
+      <Loading />
+    ) : (
+      <Weather temp={Math.round(temp)} condition={condition} />
+    );
   }
 }
